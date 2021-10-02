@@ -1,0 +1,44 @@
+Question Source:
+    http://www.10mon.net/sekaishi/chusei/europe/
+
+Flow: 
+    1. input data
+    2. all data gets stored into array or object
+    3. data is compared with 模範data
+    4. if all input matches the 模範データ, girl strips
+    5. have a few rounds of this until the girl is fully naked
+
+Components:
+    1. input data component
+    2. store data component
+    3. correct answers component
+    4. women image component
+    5. problem data component
+
+Mutations:
+    if needed (idk how it works yet)
+
+Routes:
+    Minimum: 
+        none (only one page)
+    Maximum: 
+        opening screen, game screen, ending results screen
+
+Backend:
+    if have energy, store data in firebase
+
+How it works:
+
+    The "round" variable is shared among all files [states].
+
+    Everytime an answer is submitted [input data component],
+    the round increase by 1 [Mutations].
+
+    Since the variables for the questions [problem data component], images [women image component],and choices [input data component] 
+    are all bind to the round variable,
+    the increment in round will mean change in its variables.
+    Thus, each data change to next stage.
+
+    Whenever a button [input data component] is pressed, the data is emitted to a storage [store data component].
+    The data [store data component] is compared with the correct answers [correct answers component] each time.
+    If it is true, the player can go to the next stage. If not, fails.
